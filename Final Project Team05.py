@@ -1,7 +1,7 @@
 """ Final Group Project"""
 # This is a calorie calculator.
 
-# take input from user (height, weight)
+# take input from user (height, weight, sex*)
 # translate these values into a BMI values (math function)
 # translate the BMI value into the ideal daily calorie intake (math function)
 # design a one day diet according to the calorie(including breakfast, lunch, dinner)
