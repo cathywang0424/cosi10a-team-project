@@ -1,2 +1,1 @@
-# This is a calorie table
-hahahahhahah
+# This is a calorie table (pseudocode)
