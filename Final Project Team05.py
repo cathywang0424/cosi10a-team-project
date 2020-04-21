@@ -81,15 +81,23 @@ def calorie_calculator():
 
         print("Your calculated ideal calorie per day is: ", math.ceil(calorie - 100), "~", math.ceil(calorie +150), "calories/day!")
         break
+        
     lb = math.ceil(calorie - 100)
     ub = math.ceil(calorie + 150)
     final_diet = []
     for i in diet:
         if int(i['total_calories']) >= lb and int(i['total_calories']) <=ub:
             final_diet.append(i)
+    prettydiet = random.choice(final_diet)
     print("Your calculated ideal calorie per day is: ", lb, "~", ub, "calories/day!")
     print()
-    print("Here is the diet selected for you: ", random.choice(final_diet))
+    print("Here is the diet selected for you: ")
+    print()
+    print('Breakfast: ',prettydiet['breakfast'])
+    print('Lunch: ',prettydiet['lunch'])
+    print('Dinner: ',prettydiet['dinner'])
+    print('Total Calories: ',prettydiet['total_calories'])
+
     print()
 
 calorie_calculator()
