@@ -58,6 +58,62 @@ diet=[{'breakfast':'1 3/4 cup Muesli with Raspberries',
         'snack':'dried apricots with walnut halves',
         'total_calories':'2146'}] #2200 calories
 
+diet_vegan=[{'breakfast':'2 vegan pancakes with 1/4 cup blackberries and 1 Tbsp. peanut butter',
+            'lunch':'1 serving white bean and avocado toast',
+            'dinner':'1 serving Falafel Salad with lemmon Tahini dressing',
+            'snack':'3/4 cup edamame pods','total_calories':'1200'},# 1200 cal
+            {'breakfast':'1 serving peanut butter and Chia berry Jam English Muffin',
+            'lunch':'4 cups White Bean Salad with olive oil and lemon dressing',
+            'dinner':'2 cups black bean Quinoa Buddha bowl with avocado sauce',
+            'snack':'1 Tbsp. dark chocolate chips',
+            'total_calories':'1300'},# 1300 calorie
+            {'breakfast':'1 serving peanut butter banana toast',
+            'lunch':'4 cups Green Salad with beets and lemon dressing',
+            'dinner':'1/2 cups roasted cauliflower with Asparagus',
+            'snack':'4 Tbsp. pumpkin seeds',
+            'total_calories':'1400'},# 1400 calorie
+            {'breakfast':'1 serving strawberry cream cheese begal with 1 cup unsweetened soymilk',
+            'lunch':'2 cups Black Bean Salad with potato curry soup',
+            'dinner':'1 serving stuffed sweet potato with Hummus dressing',
+            'snack':'2 Tbsp. dark chocolate chips',
+            'total_calories':'1500'},# 1500 calorie
+            {'breakfast':'2 vegan pancakes with chocolate croissant ',
+            'lunch':'2 serving veggie and Hummus sandwich',
+            'dinner':'1 serving potato curry with Asparagus',
+            'snack':'2 Tbsp. dark chocolate chips and 1 Tbsp. pumpkin seeds',
+            'total_calories':'1600'},# 1600 calorie
+            {'breakfast':'2 cups Hummus with Raspberries',
+            'lunch':'1 serving vegan Bistro lunch box',
+            'dinner':'1 serving mush potato and roasted cauliflower',
+            'snack':'1 Tbsp. potato chips',
+            'total_calories':'1700'},# 1700 cal
+            {'breakfast':'1 3/4 cup Muesli with Raspberries',
+            'lunch':'2 cups Black Bean Salad with olive oil and lemon dressing',
+            'dinner':'1 serving Poached Salmon with Asparagus and 3/4 cup Quinoa',
+            'snack':'1 Tbsp. dark chocolate chips',
+            'total_calories':'1800'},# 1800 calorie
+            {'breakfast':'1 serving chocolate peanut protein shake',
+            'lunch':'2 serving Grapefruit with roasted cauliflower',
+            'dinner':'1 serving avocado Quesadillas',
+            'snack':'1 Tbsp. Granola',
+            'total_calories':'1900'},# 1900 cal
+            {'breakfast':'1 cup Banana Chia smoothie',
+            'lunch':'1 serving Almond butter and celery',
+            'dinner':'1 serving tomato Spaghetti',
+            'snack':'1 Tbsp. square white bread and peanut butter',
+            'total_calories':'2000'},# 2000 calorie
+            {'breakfast':'1 cup Raspberries fruit milk smoothie',
+            'lunch':'2 cups Black Bean Salad and banana sandwich',
+            'dinner':'1 serving Basal pasta with olive oil',
+            'snack':'1 Tbsp. red bell pepper and Hummus',
+            'total_calories':'2100'},# 2100 calorie
+            {'breakfast':'1 cup Cinnamon apple bites and oat with soymilk',
+            'lunch':'2 cups avocado toast sandwich',
+            'dinner':'1 serving Spaghetti with mushroomm and tomato sauce',
+            'snack':'1 Tbsp. dark chocolate chips and hummus',
+            'total_calories':'2200'}]# 2200 calorie
+
+
 def calorie_calculator():
     print("*** Welcome! This is a calorie calculator. It will generate your ideal daily calorie intake and a one-day diet for you! ***")
     want_to_use = True
@@ -68,20 +124,24 @@ def calorie_calculator():
         sex = input ("What is your gender? Please enter m, f, or nonbinary.")
         height = float(input ("Please indicate your height in cm. e.g., if your height is 165cm, please enter 165."))
         weight = float(input ("Please indicate your weight in kg. e.g., if your weight is 55kg, please enter 55."))
+        vegan = input("Are you a vegan? Please enter y or n.")
         print("**********")
         print("Then we will ask you to indicate your activity level. If you do not exercise frequently, please enter 1.1. If you exercise somewhat frequently, please enter 1.2. If you exercise very frequently, please enter 1.3.")
         activity = float(input ("Please indicate your activity level."))
+        snack = input("Do you want snask options in your diet? Please enter y or n.")
 
         if sex == "m":
             calorie = (660 + 1.38 * weight + 5 * height - 6.8 * age) * activity
         elif sex == "f":
+            calorie = (655 + 9.6 * weight + 1.9 * height - 4.7 * age) * activity
+        elif vegan == "y":
             calorie = (655 + 9.6 * weight + 1.9 * height - 4.7 * age) * activity
         else:
             calorie = (660 + 1.38 * weight + 5 * height - 6.8 * age) * activity
 
         print("Your calculated ideal calorie per day is: ", math.ceil(calorie - 100), "~", math.ceil(calorie +150), "calories/day!")
         break
-        
+
     lb = math.ceil(calorie - 100)
     ub = math.ceil(calorie + 150)
     final_diet = []
@@ -96,6 +156,24 @@ def calorie_calculator():
     print('Breakfast: ',prettydiet['breakfast'])
     print('Lunch: ',prettydiet['lunch'])
     print('Dinner: ',prettydiet['dinner'])
+    if snack == "y":
+        print('Snack: ',prettydiet['snack'])
+    print('Total Calories: ',prettydiet['total_calories'])
+#for vegan choice, using new diet with the same calculation methods.
+    final_diet_vegan = []
+    for g in diet_vegan:
+        if int(g['total_calories']) >= lb and int(g['total_calories']) <= ub:
+            final_diet_vegan.append(g)
+    prettydiet = random.choice(final_diet_vegan)
+    print("Your calculated ideal calorie per day is: ", lb, "~", ub, "calories/day!")
+    print()
+    print("Here is the diet selected for you: ")
+    print()
+    print('Breakfast: ',prettydiet['breakfast'])
+    print('Lunch: ',prettydiet['lunch'])
+    print('Dinner: ',prettydiet['dinner'])
+    if snack == "y":
+        print('Snack: ',prettydiet['snack'])
     print('Total Calories: ',prettydiet['total_calories'])
 
     print()
