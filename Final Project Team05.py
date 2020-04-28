@@ -156,21 +156,20 @@ def calorie_calculator():
     if vegan == 'n':
         final_diet = []
         for i in diet:
-            if vegan == "n":
-                if int(i['total_calories']) >= lb and int(i['total_calories']) <=ub:
-                    final_diet.append(i)
-                    prettydiet = random.choice(final_diet)
-                    print("Your calculated ideal calorie per day is: ", lb, "~", ub, "calories/day!")
-                    print()
-                    print("Here is the diet selected for you: ")
-                    print()
-                    print('~ Breakfast: ',prettydiet['breakfast'])
-                    print('~ Lunch: ',prettydiet['lunch'])
-                    print('~ Dinner: ',prettydiet['dinner'])
-                    if snack == "y":
-                        print('~ Snack: ',prettydiet['snack'])
-                    print('Total Calories: ',prettydiet['total_calories'])
-                    break
+            if int(i['total_calories']) >= lb and int(i['total_calories']) <=ub:
+                final_diet.append(i)
+                prettydiet = random.choice(final_diet)
+                print("Your calculated ideal calorie per day is: ", lb, "~", ub, "calories/day!")
+                print()
+                print("Here is the diet selected for you: ")
+                print()
+                print('~ Breakfast: ',prettydiet['breakfast'])
+                print('~ Lunch: ',prettydiet['lunch'])
+                print('~ Dinner: ',prettydiet['dinner'])
+                if snack == "y":
+                    print('~ Snack: ',prettydiet['snack'])
+                print('Total Calories: ',prettydiet['total_calories'])
+                break
 #for vegan choice, using new diet with the same calculation methods.
     if vegan == "y":
         final_diet_vegan = []
