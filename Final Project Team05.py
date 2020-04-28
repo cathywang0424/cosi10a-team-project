@@ -191,5 +191,8 @@ def calorie_calculator():
                 print('Total Calories: ',prettydiet_vegan['total_calories'])
                 break
                 print()
+print("If you need any reference for those recipes, you can visit the following website:")
+print("https://www.bonappetit.com/")
+print("Thank you for using our calorie calculator! :)")
 
 calorie_calculator()
