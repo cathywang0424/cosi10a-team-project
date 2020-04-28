@@ -161,11 +161,11 @@ def calorie_calculator():
                     print()
                     print("Here is the diet selected for you: ")
                     print()
-                    print('Breakfast: ',prettydiet['breakfast'])
-                    print('Lunch: ',prettydiet['lunch'])
-                    print('Dinner: ',prettydiet['dinner'])
+                    print('~ Breakfast: ',prettydiet['breakfast'])
+                    print('~ Lunch: ',prettydiet['lunch'])
+                    print('~ Dinner: ',prettydiet['dinner'])
                     if snack == "y":
-                        print('Snack: ',prettydiet['snack'])
+                        print('~ Snack: ',prettydiet['snack'])
                     print('Total Calories: ',prettydiet['total_calories'])
                     break
 #for vegan choice, using new diet with the same calculation methods.
@@ -179,11 +179,11 @@ def calorie_calculator():
                 print()
                 print("Here is the diet selected for you: ")
                 print()
-                print('Breakfast: ',prettydiet_vegan['breakfast'])
-                print('Lunch: ',prettydiet_vegan['lunch'])
-                print('Dinner: ',prettydiet_vegan['dinner'])
+                print('~ Breakfast: ',prettydiet_vegan['breakfast'])
+                print('~ Lunch: ',prettydiet_vegan['lunch'])
+                print('~ Dinner: ',prettydiet_vegan['dinner'])
                 if snack == "y":
-                    print('Snack: ',prettydiet_vegan['snack'])
+                    print('~ Snack: ',prettydiet_vegan['snack'])
                 print('Total Calories: ',prettydiet_vegan['total_calories'])
                 print()
 
