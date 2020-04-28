@@ -167,6 +167,7 @@ def calorie_calculator():
                     if snack == "y":
                         print('Snack: ',prettydiet['snack'])
                     print('Total Calories: ',prettydiet['total_calories'])
+                    break
 #for vegan choice, using new diet with the same calculation methods.
     if vegan == "y":
         final_diet_vegan = []
