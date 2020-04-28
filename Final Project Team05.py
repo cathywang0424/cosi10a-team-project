@@ -120,7 +120,6 @@ def calorie_calculator():
 
     while (want_to_use):
         print("We will gather some of your personal information to do the calculation. ")
-        print("**********")
         age = int(input ("What is your age? "))
         print("**********")
         sex = input ("What is your gender? Please enter m, f, or nonbinary: ")
