@@ -130,8 +130,13 @@ def calorie_calculator():
                 continue
         print("----------")
 
-
-        sex = input ("What is your gender? Please enter m, f, or nonbinary: ")
+        while True:
+            sex = input ("What is your gender? Please enter m, f, or nonbinary: ")
+            if sex == "f" or sex == "m" or sex == "nonbinary":
+                break
+            else:
+                print("Please enter m, f, or nonbinary: ")
+                continue
         print("----------")
 
         while True:
@@ -173,7 +178,7 @@ def calorie_calculator():
                 print('Please enter a number.')
         print("----------")
 
-        
+
         snack = input("Do you want snask options in your diet? Please enter y or n: ")
         print("----------")
 
