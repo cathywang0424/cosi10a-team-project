@@ -119,7 +119,7 @@ def calorie_calculator():
     want_to_use = True
 
     while (want_to_use):
-        print("We will gather some of your personal information to do the calculation. ")
+        print("To begin with, we will gather some of your personal information to do the calculation. ")
         while True:
             try:
                 age = input ("What is your age? ")
@@ -131,7 +131,7 @@ def calorie_calculator():
         print("----------")
 
         while True:
-            sex = input ("What is your gender? Please enter m, f, or nonbinary: ")
+            sex = input ("Next, what is your gender? Please enter m, f, or nonbinary: ")
             if sex == "f" or sex == "m" or sex == "nonbinary":
                 break
             else:
