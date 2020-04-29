@@ -120,16 +120,42 @@ def calorie_calculator():
 
     while (want_to_use):
         print("We will gather some of your personal information to do the calculation. ")
-        age = input ("What is your age? ")
-        if type(age) != int:
-            age = int(input ("Please enter a valid age: "))
+        while True:
+            try:
+                age = input ("What is your age? ")
+                age = float(age)
+                break
+            except ValueError:
+                print('Please enter a number.')
+                continue
         print("----------")
+
+
         sex = input ("What is your gender? Please enter m, f, or nonbinary: ")
         print("----------")
-        height = float(input ("Please indicate your height in cm (e.g., if your height is 165cm, please enter 165.): "))
+
+        while True:
+            try:
+                height = float(input ("Please indicate your height in cm (e.g., if your height is 165cm, please enter 165.): "))
+                height = float(height)
+                break
+            except ValueError:
+                print('Please enter a number.')
+                continue
         print("----------")
-        weight = float(input ("Please indicate your weight in kg (e.g., if your weight is 55kg, please enter 55.): "))
+
+        while True:
+            try:
+                weight = float(input ("Please indicate your weight in kg (e.g., if your weight is 55kg, please enter 55.): "))
+                weight = float (weight)
+                break
+            except ValueError:
+                print('Please enter a number.')
+                continue
         print("----------")
+
+
+
         vegan = input("Are you a vegan? Please enter y or n: ")
         print("----------")
         print("Then we will ask you to indicate your activity level.")
@@ -137,8 +163,17 @@ def calorie_calculator():
         print("If you exercise somewhat frequently, please enter 1.2")
         print("If you exercise very frequently, please enter 1.3")
         print("----------")
-        activity = float(input ("Please indicate your activity level: "))
+
+        while True:
+            try:
+                activity = float(input ("Please indicate your activity level: "))
+                activity = float(activity)
+                break
+            except ValueError:
+                print('Please enter a number.')
         print("----------")
+
+        
         snack = input("Do you want snask options in your diet? Please enter y or n: ")
         print("----------")
 
