@@ -210,7 +210,7 @@ def calorie_calculator():
                 print('~ Dinner: ',prettydiet['dinner'])
                 if snack == "y":
                     print('~ Snack: ',prettydiet['snack'])
-                print('Total Calories: ',prettydiet['total_calories'])
+                print('~ Total Calories: ',prettydiet['total_calories'])
                 break
 #for vegan choice, using new diet with the same calculation methods.
     if vegan == "y":
@@ -228,7 +228,7 @@ def calorie_calculator():
                 print('~ Dinner: ',prettydiet_vegan['dinner'])
                 if snack == "y":
                     print('~ Snack: ',prettydiet_vegan['snack'])
-                print('Total Calories: ',prettydiet_vegan['total_calories'])
+                print('~ Total Calories: ',prettydiet_vegan['total_calories'])
                 break
                 print()
 print("If you need any reference for these recipes, you can visit the following website:")
